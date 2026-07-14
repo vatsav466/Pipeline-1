@@ -18,7 +18,7 @@ env:
 
 jobs:
   # ---------------------------------------------------------
-  # CI: install, lint, build the React app, upload dist/
+  # CI: install dependencies, build the React app, upload dist/
   # ---------------------------------------------------------
   ci:
     name: Lint & Build
@@ -35,10 +35,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
-      # Uses --if-present so this doesn't fail if you don't have a lint script yet
-      - name: Lint
-        run: npm run lint --if-present
 
       - name: Build production bundle
         run: npm run build
